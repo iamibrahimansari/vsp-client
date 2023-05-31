@@ -1,0 +1,44 @@
+.hero{
+    position: relative;
+    .video-container{
+        width: 100%;
+        height: 90vh;
+        video{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .video-info{
+        font-size: 1.2rem;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        bottom: 10rem;
+        left: 10rem;
+        color: #fff;
+        .title{
+            display: flex;
+            flex-direction: column;
+            font-size: 3rem;
+        }
+        .date-duration-views{
+            display: flex;
+            gap: 2rem;
+        }
+        .publisher{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            .img{
+                width: 3rem;
+                height: 3rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
