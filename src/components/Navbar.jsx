@@ -1,6 +1,7 @@
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 
 const Navbar = ({setSearchKeyword}) =>{
+    const location = useLocation();
     const username = localStorage.getItem('username');
     const navigate = useNavigate();
     const signout = event =>{
@@ -11,9 +12,12 @@ const Navbar = ({setSearchKeyword}) =>{
         <nav className="nav">
             <ul>
                 <li className="title" onClick={() => navigate('/')}>Tuner</li>
-                <li>
-                    <input type="search" name="search" onChange={event => setSearchKeyword(event.target.value)} id="search" placeholder="Search" />
-                </li>
+                {
+                    location.pathname === '/' &&
+                    <li>
+                        <input type="search" name="search" onChange={event => setSearchKeyword(event.target.value)} id="search" placeholder="Search" />
+                    </li>
+                }
                 <li>
                     {
                         localStorage.getItem('username') ?
